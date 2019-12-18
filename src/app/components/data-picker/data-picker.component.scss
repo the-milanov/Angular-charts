@@ -2,3 +2,8 @@ mat-card{
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 1024px){
+  #getData{
+    align-self: flex-end;
+  }
+}
