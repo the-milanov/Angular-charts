@@ -1,83 +1,13 @@
 <div id="container">
-  <ngx-charts-line-chart [scheme]="colorScheme"
+  <ngx-charts-line-chart [scheme]="colors"
   [autoScale]="true"
-  [legend]="legend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxis]="xAxis"
-  [yAxis]="yAxis"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel"
-  [timeline]="timeline" [results]='[
-  {
-    "name": "Germany",
-    "series": [
-      {
-        "name": "1990",
-        "value": 92
-      },
-      {
-        "name": "2010",
-        "value": 130
-      },
-      {
-        "name": "2011",
-        "value": 89
-      }
-    ]
-  },
-
-  {
-    "name": "USA",
-    "series": [
-      {
-        "name": "1990",
-        "value": 123
-      },
-      {
-        "name": "2010",
-        "value": 150
-      },
-      {
-        "name": "2011",
-        "value": 90
-      }
-    ]
-  },
-
-  {
-    "name": "France",
-    "series": [
-      {
-        "name": "1990",
-        "value": 115
-      },
-      {
-        "name": "2010",
-        "value": 165
-      },
-      {
-        "name": "2011",
-        "value": 180
-      }
-    ]
-  },
-  {
-    "name": "UK",
-    "series": [
-      {
-        "name": "1990",
-        "value": 84
-      },
-      {
-        "name": "2010",
-        "value": 116
-      },
-      {
-        "name": "2011",
-        "value": 132
-      }
-    ]
-  }
-]'></ngx-charts-line-chart>
+  [legend]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxis]="true"
+  [yAxis]="true"
+  [xAxisLabel]="horizontalLabel"
+  [yAxisLabel]="verticalLabel"
+  [timeline]="false"
+  [results]='data'></ngx-charts-line-chart>
 </div>

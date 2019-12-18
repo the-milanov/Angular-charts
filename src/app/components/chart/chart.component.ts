@@ -1,30 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from "@angular/core";
+import { data } from "../../models/default-data";
 @Component({
-  selector: 'app-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss']
+  selector: "app-chart",
+  templateUrl: "./chart.component.html",
+  styleUrls: ["./chart.component.scss"]
 })
 export class ChartComponent implements OnInit {
-
   // options
-  legend: boolean = true;
-  showLabels: boolean = true;
-  animations: boolean = true;
-  xAxis: boolean = true;
-  yAxis: boolean = true;
-  showYAxisLabel: boolean = true;
-  showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Date';
-  yAxisLabel: string = 'Value';
-  timeline: boolean = true;
-
-  colorScheme = {
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
-  };
+  horizontalLabel: string = "Date";
+  verticalLabel: string = "Value";
+  colors = { domain: ["red", "teal", "skyblue", "orange", "blue"] };
+  data;
   constructor() {
+    this.data = data;
   }
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

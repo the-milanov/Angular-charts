@@ -9,7 +9,7 @@
       <mat-label>Base currency:</mat-label>
       <mat-select [(ngModel)]="selectedCurrencies[0]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
-          {{ currency.label }}
+          {{ currency.value + " - " + currency.label }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -17,7 +17,7 @@
       <mat-label>First:</mat-label>
       <mat-select [(ngModel)]="selectedCurrencies[1]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
-          {{ currency.label }}
+          {{ currency.value + " - " + currency.label }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -25,7 +25,7 @@
       <mat-label>Second:</mat-label>
       <mat-select [(ngModel)]="selectedCurrencies[2]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
-          {{ currency.label }}
+          {{ currency.value + " - " + currency.label }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -33,7 +33,7 @@
       <mat-label>Third:</mat-label>
       <mat-select [(ngModel)]="selectedCurrencies[3]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
-          {{ currency.label }}
+          {{ currency.value + " - " + currency.label }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -41,7 +41,7 @@
       <mat-label>Fourth:</mat-label>
       <mat-select [(ngModel)]="selectedCurrencies[4]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
-          {{ currency.label }}
+          {{ currency.value + " - " + currency.label }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -49,7 +49,7 @@
       <mat-label>Fifth:</mat-label>
       <mat-select [(ngModel)]="selectedCurrencies[5]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
-          {{ currency.label }}
+          {{ currency.value + " - " + currency.label }}
         </mat-option>
       </mat-select>
     </mat-form-field>
