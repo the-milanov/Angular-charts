@@ -1,10 +1,11 @@
 mat-form-field{
   display: block;
+  margin-top: 10px;
 }
 @media screen and (min-width: 1024px){
   mat-form-field{
     display: inline-block;
-    margin: 5px 10px 5px 0;
+    margin: 10px 10px 5px 0;
     width: calc(50% - 10px);
   } 
 }

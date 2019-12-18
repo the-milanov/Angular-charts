@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
@@ -7,6 +8,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CurrencyPickerComponent } from "./components/currency-picker/currency-picker.component";
 import { DatePickerComponent } from "./components/date-picker/date-picker.component";
 import { DataPickerComponent } from "./components/data-picker/data-picker.component";
+import { ChartComponent } from './components/chart/chart.component';
 
 // Material modules
 import { MatDatepickerModule } from "@angular/material/datepicker";
@@ -17,7 +19,6 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatSelectModule } from "@angular/material/select";
-import { ChartComponent } from './components/chart/chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,9 @@ import { ChartComponent } from './components/chart/chart.component';
     MatButtonModule,
     MatExpansionModule,
     MatSelectModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
