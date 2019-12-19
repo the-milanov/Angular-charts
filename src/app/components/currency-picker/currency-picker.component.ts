@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { currencies, Currency } from "../../models/currencies";
+import { DataCommunicationService } from 'src/app/services/data-communication.service';
 @Component({
   selector: 'app-currency-picker',
   templateUrl: './currency-picker.component.html',
@@ -7,10 +8,8 @@ import { currencies, Currency } from "../../models/currencies";
 })
 export class CurrencyPickerComponent implements OnInit {
   currencies: Array<Currency>;
-  selectedCurrencies: Array<Currency>;
-  constructor() { 
+  constructor(private dataService: DataCommunicationService) { 
     this.currencies = currencies;
-    this.selectedCurrencies = currencies.slice(0,6);
   }
 
   ngOnInit() {

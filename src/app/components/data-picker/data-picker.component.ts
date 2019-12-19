@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataCommunicationService } from 'src/app/services/data-communication.service';
 
 @Component({
   selector: 'app-data-picker',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataPickerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataCommunicationService) { }
 
   ngOnInit() {
+  }
+  requestData(){
+    this.dataService.requestData();
   }
 
 }
