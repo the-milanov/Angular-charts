@@ -17,6 +17,8 @@ export class DataCommunicationService {
   endDateControl: FormControl;
   // Query currencies
   selectedCurrencies: Array<Currency>;
+  baseUrl = "https://api.exchangeratesapi.io/";
+
   constructor() {
     // Initial dates
     const startDate = new Date();
@@ -32,8 +34,31 @@ export class DataCommunicationService {
     this.startDateControl = new FormControl(startDate);
     this.endDateControl = new FormControl(endDate);
     // Set selected currencies
-    this.selectedCurrencies = currencies.slice(0,6);
+    this.selectedCurrencies = currencies.slice(0, 6);
   }
   requestData() {
+    console.log(this.getRequestUrl());
+  }
+  getRequestUrl(): string {
+    let startDate = (<string>this.startDateControl.value.toISOString()).substr(
+      0,
+      10
+    );
+    let endDate = (<string>this.endDateControl.value.toISOString()).substr(
+      0,
+      10
+    );
+    let base = this.selectedCurrencies[0].value;
+    let symbols: string = "";
+    this.selectedCurrencies
+      .slice(1, this.selectedCurrencies.length)
+      .forEach((v, i) => {
+        if (this.selectedCurrencies.length - 2 > i) {
+          symbols += `${v.value},`;
+        } else {
+          symbols += `${v.value}`;
+        }
+      });
+    return `${this.baseUrl}history?start_at=${startDate}&end_at=${endDate}&symbols=${symbols}&base=${base}`;
   }
 }
