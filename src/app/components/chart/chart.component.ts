@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { data } from "../../models/default-data";
+import { DataCommunicationService } from 'src/app/services/data-communication.service';
 @Component({
   selector: "app-chart",
   templateUrl: "./chart.component.html",
@@ -9,10 +9,8 @@ export class ChartComponent implements OnInit {
   horizontalLabel: string = "Date";
   verticalLabel: string = "Value";
   colors = { domain: ["red", "teal", "skyblue", "orange", "blue"] };
-  data;
 
-  constructor() {
-    this.data = data;
+  constructor(private dataService: DataCommunicationService) {
   }
   ngOnInit() {}
 }
