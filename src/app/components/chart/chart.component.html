@@ -1,13 +1,17 @@
 <div id="container">
-  <ngx-charts-line-chart [scheme]="colors"
-  [autoScale]="true"
-  [legend]="true"
-  [showXAxisLabel]="true"
-  [showYAxisLabel]="true"
-  [xAxis]="true"
-  [yAxis]="true"
-  [xAxisLabel]="horizontalLabel"
-  [yAxisLabel]="verticalLabel"
-  [timeline]="false"
-  [results]='data'></ngx-charts-line-chart>
+  <div>
+    <ngx-charts-line-chart
+      [scheme]="colors"
+      [autoScale]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [xAxisLabel]="horizontalLabel"
+      [yAxisLabel]="verticalLabel"
+      [timeline]="false"
+      [results]="dataService.chartData"
+    ></ngx-charts-line-chart>
+  </div>
 </div>

@@ -4,15 +4,15 @@ export let data = [
     series: [
       {
         name: "1990",
-        value: 92
+        value: 100
       },
       {
         name: "2010",
-        value: 130
+        value: 110
       },
       {
         name: "2011",
-        value: 89
+        value: 120
       }
     ]
   },
@@ -22,15 +22,15 @@ export let data = [
     series: [
       {
         name: "1990",
-        value: 123
+        value: 110
       },
       {
         name: "2010",
-        value: 150
+        value: 120
       },
       {
         name: "2011",
-        value: 90
+        value: 130
       }
     ]
   },
@@ -39,15 +39,15 @@ export let data = [
     series: [
       {
         name: "1990",
-        value: 115
+        value: 120
       },
       {
         name: "2010",
-        value: 165
+        value: 130
       },
       {
         name: "2011",
-        value: 180
+        value: 140
       }
     ]
   },
@@ -56,15 +56,15 @@ export let data = [
     series: [
       {
         name: "1990",
-        value: 84
+        value: 130
       },
       {
         name: "2010",
-        value: 116
+        value: 140
       },
       {
         name: "2011",
-        value: 132
+        value: 150
       }
     ]
   },
@@ -73,15 +73,15 @@ export let data = [
     series: [
       {
         name: "1990",
-        value: 184
+        value: 140
       },
       {
         name: "2010",
-        value: 166
+        value: 150
       },
       {
         name: "2011",
-        value: 102
+        value: 160
       }
     ]
   }
