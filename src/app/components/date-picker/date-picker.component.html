@@ -1,0 +1,10 @@
+<mat-form-field color="accent">
+  <input matInput [min]="dataService.startMinDate" [max]="dataService.startMaxDate" [matDatepicker]="start" placeholder="Start date:" [formControl]="dataService.startDateControl">
+  <mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+  <mat-datepicker #start></mat-datepicker>
+</mat-form-field>
+<mat-form-field color="accent">
+  <input matInput [min]="dataService.endMinDate" [max]="dataService.endMaxDate" [matDatepicker]="end" placeholder="End date:" [formControl]="dataService.endDateControl">
+  <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+  <mat-datepicker #end></mat-datepicker>
+</mat-form-field>

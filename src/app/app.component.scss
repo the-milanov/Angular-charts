@@ -1,0 +1,15 @@
+#container{
+  background-color: #69f0ae;
+  min-height: 100vh;
+  padding: 5px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1024px){
+  #container{
+    padding: 5px 20%;
+    margin: auto;
+  }
+  #container > *{
+    width: 60%;
+  }
+}

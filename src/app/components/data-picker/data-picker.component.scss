@@ -1,0 +1,10 @@
+mat-card{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+@media screen and (min-width: 1024px){
+  #getData{
+    align-self: flex-end;
+  }
+}
