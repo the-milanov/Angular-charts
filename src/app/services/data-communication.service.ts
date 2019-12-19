@@ -4,9 +4,7 @@ import { currencies, Currency } from '../models/currencies';
 import { HttpClient } from '@angular/common/http';
 import { data } from '../models/default-data';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DataCommunicationService {
   // Start date
   startMinDate: Date;
@@ -15,12 +13,12 @@ export class DataCommunicationService {
   endMinDate: Date;
   endMaxDate: Date;
   // Date form controls
-  startDateControl: FormControl;
-  endDateControl: FormControl;
+  public startDateControl: FormControl;
+  public endDateControl: FormControl;
   // Query currencies
-  selectedCurrencies: Array<Currency>;
+  public selectedCurrencies: Array<Currency>;
 
-  chartData: Array<any>;
+  public chartData: Array<any>;
   baseUrl = 'https://api.exchangeratesapi.io/';
 
   constructor(private _httpClient: HttpClient) {
@@ -43,7 +41,7 @@ export class DataCommunicationService {
     // Initial request
     this.requestData();
   }
-  requestData() {
+  public requestData() {
     const requestUrl = this.getRequestUrl();
     this._httpClient.get<any>(requestUrl).subscribe(response => {
       this.transformData(response.rates);

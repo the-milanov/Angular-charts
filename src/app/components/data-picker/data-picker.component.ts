@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { DataCommunicationService } from 'src/app/services/data-communication.service';
+import { DataCommunicationService } from './../../services/data-communication.service';
 
 @Component({
   selector: 'app-data-picker',
   templateUrl: './data-picker.component.html',
-  styleUrls: ['./data-picker.component.scss']
+  styleUrls: ['./data-picker.component.scss'],
+  providers: [DataCommunicationService]
 })
 export class DataPickerComponent implements OnInit {
+  public dataService: DataCommunicationService;
 
-  constructor(private dataService: DataCommunicationService) { }
+  constructor(private _dataService: DataCommunicationService) { 
+    this.dataService = _dataService;
+  }
 
   ngOnInit() {
   }
-  requestData(){
+  public requestData(){
     this.dataService.requestData();
   }
 
