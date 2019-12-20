@@ -4,15 +4,12 @@ import { DataCommunicationService } from './../../services/data-communication.se
   selector: "app-chart",
   templateUrl: "./chart.component.html",
   styleUrls: ["./chart.component.scss"],
-  providers: [DataCommunicationService]
 })
 export class ChartComponent implements OnInit {
   public horizontalLabel: string = "Date";
   public verticalLabel: string = "Value";
   public colors = { domain: ["red", "teal", "skyblue", "orange", "blue"] };
-  public dataService: DataCommunicationService;
-  constructor(private _dataService: DataCommunicationService) {
-  this.dataService = _dataService;
+  constructor(public dataService: DataCommunicationService) {
   }
   ngOnInit() {}
 }

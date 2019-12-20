@@ -12,8 +12,6 @@ import { DatePickerComponent } from "./components/date-picker/date-picker.compon
 import { DataPickerComponent } from "./components/data-picker/data-picker.component";
 import { ChartComponent } from "./components/chart/chart.component";
 
-import { DataCommunicationService } from "./services/data-communication.service";
-
 // Material modules
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -28,7 +26,6 @@ import { MatSelectModule } from "@angular/material/select";
     AppComponent,
     CurrencyPickerComponent,
     DatePickerComponent,
-
     DataPickerComponent,
     ChartComponent
   ],
@@ -46,13 +43,10 @@ import { MatSelectModule } from "@angular/material/select";
     MatSelectModule,
     NgxChartsModule,
     FormsModule,
-
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [
-    DataCommunicationService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
