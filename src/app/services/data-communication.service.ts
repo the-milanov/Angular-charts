@@ -4,7 +4,9 @@ import { currencies, Currency } from '../models/currencies';
 import { HttpClient } from '@angular/common/http';
 import { data } from '../models/default-data';
 
-@Injectable()
+@Injectable(
+  {providedIn: 'root'}
+)
 export class DataCommunicationService {
   // Start date
   startMinDate: Date;

@@ -5,13 +5,9 @@ import { DataCommunicationService } from '../../services/data-communication.serv
   selector: 'app-date-picker',
   templateUrl: './date-picker.component.html',
   styleUrls: ['./date-picker.component.scss'],
-  providers: [DataCommunicationService]
 })
 export class DatePickerComponent implements OnInit {
-  public dataService: DataCommunicationService;
-  constructor(private _dataService: DataCommunicationService) {
-    this.dataService = _dataService;
-
+  constructor(public dataService: DataCommunicationService) {
   }
 
   ngOnInit() {}
