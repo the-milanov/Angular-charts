@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataCommunicationService } from '../../services/data-communication.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-date-picker',
@@ -7,6 +7,6 @@ import { DataCommunicationService } from '../../services/data-communication.serv
   styleUrls: ['./date-picker.component.scss'],
 })
 export class DatePickerComponent{
-  constructor(public dataService: DataCommunicationService) {
+  constructor(public dataService: DataService) {
   }
 }

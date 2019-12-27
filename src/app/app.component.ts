@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataCommunicationService } from './services/data-communication.service';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,6 @@ import { DataCommunicationService } from './services/data-communication.service'
 })
 export class AppComponent {
   title = 'Angular Charts';
-  constructor(public dataService: DataCommunicationService) {
+  constructor(public dataService: DataService) {
   }
 }

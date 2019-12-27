@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { currencies } from '../../data/currencies';
 import { Currency } from '../../models/Currency';
-import { DataCommunicationService } from 'src/app/services/data-communication.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-currency-picker',
@@ -10,6 +10,6 @@ import { DataCommunicationService } from 'src/app/services/data-communication.se
 })
 export class CurrencyPickerComponent {
   currencies: Array<Currency> = currencies;
-  constructor(public dataService: DataCommunicationService) {
+  constructor(public dataService: DataService) {
   }
 }
