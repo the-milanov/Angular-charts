@@ -21,6 +21,7 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatSelectModule } from "@angular/material/select";
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { MatSelectModule } from "@angular/material/select";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-export let data = [
+export let defaultChartData = [
   {
     name: "First",
     series: [
