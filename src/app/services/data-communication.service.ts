@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { currencies } from '../data/currencies';
-import { Currency } from '../models/Currency';
-import { HttpClient } from '@angular/common/http';
-import { data } from '../data/default-chart-data';
+import { catchError, retry } from "rxjs/internal/operators";
+import { Injectable } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { currencies } from "../data/currencies";
+import { Currency } from "../models/Currency";
+import { HttpClient } from "@angular/common/http";
+import { data } from "../data/default-chart-data";
+import { of, Observable } from "rxjs";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
-@Injectable(
-  {providedIn: 'root'}
-)
+@Injectable({ providedIn: "root" })
 export class DataCommunicationService {
   // Start date
   startMinDate: Date;
@@ -22,9 +23,9 @@ export class DataCommunicationService {
   public selectedCurrencies: Array<Currency>;
 
   public chartData: Array<any>;
-  baseUrl = 'https://api.exchangeratesapi.io/';
+  baseUrl = "https://api.exchangeratesapi.io/";
 
-  constructor(private _httpClient: HttpClient) {
+  constructor(private _snackBar: MatSnackBar, private _httpClient: HttpClient) {
     // Initial dates
     const startDate = new Date();
     startDate.setFullYear(startDate.getFullYear() - 3);
@@ -44,11 +45,23 @@ export class DataCommunicationService {
     // Initial request
     this.requestData();
   }
+
+  private log(message: string) {
+    console.log(message);
+  }
   public requestData() {
     const requestUrl = this.getRequestUrl();
-    this._httpClient.get<any>(requestUrl).subscribe(response => {
-      this.transformData(response.rates);
-    });
+    this._httpClient.get<any>(requestUrl).subscribe(
+      response => {
+        this.transformData(response.rates);
+      },
+      error => {
+        this._snackBar.open(
+          `Failed request, error message: ${error.error.error}`,
+          "OK"
+        );
+      }
+    );
   }
   transformData(rates) {
     const newChartData: Array<any> = [];
@@ -56,13 +69,13 @@ export class DataCommunicationService {
     // tslint:disable-next-line: forin
     for (const key in rates[Object.keys(rates)[0]]) {
       const currencyData = {};
-      currencyData['name'] = key;
-      currencyData['series'] = [];
+      currencyData["name"] = key;
+      currencyData["series"] = [];
       for (const date of sortedDates) {
         let dataBlock = {};
         dataBlock["name"] = date;
         dataBlock["value"] = rates[date][key];
-        currencyData['series'].push(dataBlock);
+        currencyData["series"].push(dataBlock);
       }
       newChartData.push(currencyData);
     }
@@ -78,7 +91,7 @@ export class DataCommunicationService {
       10
     );
     const base = this.selectedCurrencies[0].value;
-    let symbols = '';
+    let symbols = "";
     this.selectedCurrencies
       .slice(1, this.selectedCurrencies.length)
       .forEach((v, i) => {
