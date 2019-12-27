@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataCommunicationService } from '../../services/data-communication.service';
 
 @Component({
@@ -6,9 +6,7 @@ import { DataCommunicationService } from '../../services/data-communication.serv
   templateUrl: './date-picker.component.html',
   styleUrls: ['./date-picker.component.scss'],
 })
-export class DatePickerComponent implements OnInit {
+export class DatePickerComponent{
   constructor(public dataService: DataCommunicationService) {
   }
-
-  ngOnInit() {}
 }

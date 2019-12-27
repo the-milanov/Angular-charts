@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataCommunicationService } from './../../services/data-communication.service';
 
 @Component({
@@ -6,14 +6,6 @@ import { DataCommunicationService } from './../../services/data-communication.se
   templateUrl: './data-picker.component.html',
   styleUrls: ['./data-picker.component.scss'],
 })
-export class DataPickerComponent implements OnInit {
-  constructor(public dataService: DataCommunicationService) { 
-  }
-
-  ngOnInit() {
-  }
-  public requestData(){
-    this.dataService.requestData();
-  }
-
+export class DataPickerComponent {
+  constructor(public dataService: DataCommunicationService) { }
 }

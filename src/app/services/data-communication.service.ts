@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { currencies, Currency } from '../models/currencies';
+import { currencies } from '../data/currencies';
+import { Currency } from '../models/Currency';
 import { HttpClient } from '@angular/common/http';
-import { data } from '../models/default-data';
+import { data } from '../data/default-chart-data';
 
 @Injectable(
   {providedIn: 'root'}

@@ -5,16 +5,16 @@
         Currency selection:
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <mat-label>Base currency:</mat-label>
     <mat-form-field color="accent">
-      <mat-label>Base currency:</mat-label>
       <mat-select [(ngModel)]="dataService.selectedCurrencies[0]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
           {{ currency.value + " - " + currency.label }}
         </mat-option>
       </mat-select>
     </mat-form-field>
+    <mat-label>Compared to:</mat-label>
     <mat-form-field color="accent">
-      <mat-label>First:</mat-label>
       <mat-select [(ngModel)]="dataService.selectedCurrencies[1]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
           {{ currency.value + " - " + currency.label }}
@@ -22,7 +22,6 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field color="accent">
-      <mat-label>Second:</mat-label>
       <mat-select [(ngModel)]="dataService.selectedCurrencies[2]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
           {{ currency.value + " - " + currency.label }}
@@ -30,7 +29,6 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field color="accent">
-      <mat-label>Third:</mat-label>
       <mat-select [(ngModel)]="dataService.selectedCurrencies[3]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
           {{ currency.value + " - " + currency.label }}
@@ -38,7 +36,6 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field color="accent">
-      <mat-label>Fourth:</mat-label>
       <mat-select [(ngModel)]="dataService.selectedCurrencies[4]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
           {{ currency.value + " - " + currency.label }}
@@ -46,7 +43,6 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field color="accent">
-      <mat-label>Fifth:</mat-label>
       <mat-select [(ngModel)]="dataService.selectedCurrencies[5]">
         <mat-option *ngFor="let currency of currencies" [value]="currency">
           {{ currency.value + " - " + currency.label }}
